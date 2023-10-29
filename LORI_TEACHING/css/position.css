@@ -78,7 +78,7 @@
 } */
 
 .card:hover {
-    box-shadow: 0 25px 20px rgba(52, 45, 55, 0.2), 0 0 0 10px rgba(255, 99, 71, 0.7);
+    /* box-shadow: 0 25px 20px rgba(52, 45, 55, 0.2), 0 0 0 10px rgba(255, 99, 71, 0.7); */
 }
 
 .card-header>img {
