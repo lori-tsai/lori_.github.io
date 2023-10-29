@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,900&display=swap');
+
+body {
+    font-family: 'Microsoft JhengHei', "helvetica neue", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.heading1 {
+    font-family: 'Raleway', sans-serif;
+    width: fit-content;
+    font-size: 52px;
+    color: #23241f;
+    position: relative;
+    cursor: default;
+}
+
+.heading1,
+.heading1>div,
+.heading1:after {
+    transition: all .36s ease-out;
+}
+
+.heading1.scale {
+    transform: scale(.8);
+    transform-origin: left bottom;
+}
+
+.heading1:after {
+    content: "";
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background: salmon;
+    z-index: -1;
+    transition: all .5s ease;
+}
+
+.heading1>div {
+    position: relative;
+    bottom: 0px;
+}
+
+.heading1:hover>div {
+    bottom: 6px;
+    transform: scale(.9);
+    text-shadow: 4px 4px 0px white;
+}
+
+.heading1:hover:after {
+    background: mediumaquamarine;
+}
+
+.lead {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+section {
+    padding: 50px 0px;
+    border-top: 1px dashed #333;
+}
+
+footer {
+    background: black;
+    margin-top: 30px;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+footer p {
+    color: #cacaca;
+    margin: 0px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #cacaca;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+section h2 {
+    margin-top: 0px;
+}
+
+h1,
+h2 {
+    color: rgb(49, 47, 47);
+}
+
+.mt-50 {
+    margin-top: 50px;
+}

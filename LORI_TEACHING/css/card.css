@@ -1,0 +1,165 @@
+/* ########## 試著透過CSS完成以下的設計 ########## */
+
+/* 
+   排版: 調整大小、排列方式、間距(留白)，再來設定細節
+*/
+
+* {
+    /* border: 1px solid black; */
+}
+
+header {
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* 階層選擇器: 選到A元素內的B元素 */
+/* 選到header裡的h1 */
+
+header h1 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+header a {
+    text-decoration: none;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    opacity: .8;
+    transition: all .2s ease;
+}
+
+header a:hover {
+    opacity: 1;
+    /* 區塊陰影: 水平 垂直 模糊 (縮放) 顏色; */
+    box-shadow: 0px 0px 0px 5px #ff145a3c;
+}
+
+.card-section {
+    background: #eee;
+}
+
+/* 放置所有內容的容器 */
+.container {
+    /* border: 4px solid blue; */
+    max-width: 1200px;
+    /* 對外留白: 上下 左右; */
+    margin: 0px auto;
+}
+
+/* 放置所有col的容器 */
+.row {
+    /* 讓此元素內的第一層元素橫向排 */
+    display: flex;
+    /* 取消自動縮放，放不下就換行 */
+    flex-wrap: wrap;
+}
+
+/* 一張卡片所在的容器 */
+.col {
+    /* width: 33.333%; */
+    width: calc(100% / 3);
+    /* 留白: 上下 左右; */
+    padding: 40px 15px;
+    /* 留白: 上 右 下 左; */
+    /* padding: 10px 20px 30px 40px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+}
+
+/* 一張卡片 */
+.card {
+    border-radius: 8px;
+    background: white;
+    /* 將超出的內容隱藏 */
+    overflow: hidden;
+    /* 區塊陰影: 水平 垂直 模糊 顏色; */
+    box-shadow: 0px 5px 4px #25212595;
+    opacity: .8;
+    transform: scale(.95);
+    transition: all .3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 25px 24px #513f5195;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 卡片圖片 */
+.card-img {
+    width: 100%;
+    display: block;
+    /* border-top-left-radius: 20px; */
+    /* border-top-right-radius: 20px; */
+}
+
+/* 卡片文字區 */
+.card-body {
+    padding: 20px 20px;
+}
+
+/* 卡片標題 */
+.card-title {
+    margin-top: 0;
+}
+
+/* 卡片內文 */
+.card-text {
+    margin-bottom: 0;
+}
+
+/* 卡片分類徽章 */
+.badge {
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.badge-red {
+    background: linear-gradient(45deg, #fe3314, #f46e07);
+}
+
+.badge-green {
+    background: linear-gradient(45deg, #16ae1b, #f0ca0c);
+}
+
+.badge-blue {
+    background: linear-gradient(45deg, #162dae, #dd0cf0);
+}
+
+/* media query */
+/* mobile: 575, 767 */
+/* 視窗寬度小於等於412才有效 -例如手機版*/
+@media (max-width: 412px) {}
+
+@media (max-width: 767px) {
+
+    /* 以下的設定只在視窗寬度 <= 767px 才有效 */
+    .col {
+        width: 100%;
+        padding: 15px 25px;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .card {
+        background: black;
+        color: white;
+    }
+}
+
+/* tablet: 768, 991 */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* 視窗寬度 768~991 之間才有效 */
+    .col {
+        width: 50%;
+    }
+}

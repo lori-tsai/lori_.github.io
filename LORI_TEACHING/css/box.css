@@ -1,0 +1,23 @@
+.box {
+    /* 沒有包含邊框  不用預設瀏覽預設大小*/
+    width: 300px;
+    height: 300px;
+    /* 試著調整border的大小看看會有什麼改變？ */
+    border: 3px solid black;
+    /* 3+300+3 */
+    box-shadow: 0px 2px 3px #a76fcc4d;
+    opacity: .8;
+    transition: all .5s ease;
+    background: #d6abda;
+    background: linear-gradient(135deg, #d6abda, #a46bcd);
+}
+
+.box:hover {
+    box-shadow: 0px 30px 35px -15px #a76fcc4d;
+    opacity: 1;
+}
+
+/* 去除.box裡面所有元素(*)的預設margin */
+.box * {
+    margin: 0;
+}

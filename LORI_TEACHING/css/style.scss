@@ -1,0 +1,94 @@
+header {
+    padding: 20px 15px;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+section {
+    padding: 20px 15px;
+}
+
+/* ########## 試著調整以下選擇目標的樣式 ########## */
+
+/* 分類 .→class */
+/* 設計好要多元的區別 */
+
+.important-title {
+    color: hwb(339 24% 4%);
+    font-size: 36px;
+    /* 字元間距 */
+    letter-spacing: 5px;
+    /* text-align: left; 預設靠左不用寫*/
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.red-shadow {
+    /* 文字陰影： 左右 上下 模糊 顏色(一定要設定) */
+    text-shadow: 2px 5px 4px rgb(214, 129, 129);
+}
+
+/* 所有影像都會套用到 */
+/* img {
+    filter: grayscale(100%);
+} */
+
+
+.grayc100 {
+    filter: grayscale(100%);
+    transition: all .5s ease;
+    /* 指定一個就會只有這個屬性變成漸變     */
+    /* 漸變：屬性名稱 時間 速度曲線; */
+    /* 漸變會加在一般選擇器中 */
+    /* 百分筆越高越灰階 */
+}
+
+/* 前面的元素被滑鼠游標接觸:hover */
+/* :hover當選擇器點到圖示會變成灰階 */
+.grayc100:hover {
+    filter: grayscale(0%);
+}
+
+.btn {
+    background-color: yellowgreen;
+    color: black;
+
+}
+
+.btn_pink {
+    background-color: pink;
+    color: balck;
+    padding: 5px 8px;
+
+    text-decoration: none;
+    /* 邊框 */
+    border-radius: 80px;
+    transition: al 0.5 ease;
+}
+
+.btn {
+    background-color: orange;
+    color: white;
+    /* 對內留白:上下 左右 */
+    padding: 5px 8px;
+    /* 文字裝飾線 none刪除裝飾線 */
+    text-decoration: none;
+    border-radius: 80px;
+    transition: all 0.5 ease;
+}
+
+.btn:hover {
+    background-color: burlywood;
+}
+
+.btn_pink:hover {
+    background-color: bisque;
+    /* 漸變 */
+    transition: all .2s ease;
+}

@@ -1,0 +1,226 @@
+/* ====== .relative-btn ====== */
+.relative-btn {
+    border: none;
+    height: 48px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    padding: 0 20px;
+    background: #ee9ca7;
+    cursor: pointer;
+    /* 更多CSS cursor */
+    /* https://www.w3schools.com/cssref/pr_class_cursor.asp */
+    border-radius: 12px;
+    box-shadow: 0px 2px 3px #eea2ac94;
+    transition: all 1s ease;
+    bottom: 0px;
+    position: relative;
+    /*position 定位可以重疊設計 */
+}
+
+.relative-btn:hover {
+    background: #D76D77;
+    box-shadow: 0px 8px 15px #eea2ac94;
+    position: relative;
+    bottom: 10px;
+    position: relative;
+}
+
+.relative-btn:active {
+    box-shadow: 0px 8px 15px #eea2ac94, 0px 0px 0px 8px #eea2ac94;
+    transition: all .1s ease;
+}
+
+/* ====== .outer-box ====== */
+.outer-box {
+    width: 200px;
+    height: 200px;
+    color: white;
+    background: #184c80;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* opacity: .7; 透明*/
+    /* 大方塊定位：需要先設定為relative */
+    /* 假設此元素裡面有absoluter定位元素，最適合使用relative做為參考
+       會佔空間的有2個：static、relative(即能給absolate參考又會佔空間)
+       不會佔空間的2個：absolute、fixed
+    */
+    position: relative;
+}
+
+.inner-box {
+    width: 80px;
+    height: 80px;
+    background: #1febaa;
+    border-radius: 5px;
+    opacity: .8;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
+    transition: all .3s ease;
+    /* 小方塊 設定absolute就不佔空間 */
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    /* left: 120px; */
+    /* 設定此元素定位到上層元素(.outer-box)的指定位置 */
+
+}
+
+.inner-box:hover {
+    opacity: 1;
+}
+
+/* ======.card======
+.card {
+    width: 500px;
+    box-shadow: 0 2px 3px rgba(52, 45, 55, 0.2), 0 0 0 0px rgba(255, 99, 71, 0);
+    margin-left: 10px;
+    transition: all .3s ease;
+} */
+
+.card:hover {
+    box-shadow: 0 25px 20px rgba(52, 45, 55, 0.2), 0 0 0 10px rgba(255, 99, 71, 0.7);
+}
+
+.card-header>img {
+    display: flex;
+    filter: brightness(1);
+    transition: all .3s ease;
+    border-radius: 8px;
+}
+
+.card:hover .card-header>img {
+    filter: brightness(1.2);
+}
+
+.card-body {
+    padding: 10px 10px;
+    background: #FFF;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.card-body h4,
+.card-body p {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.card-header {
+    position: relative;
+    /* 將超出的內容隱 */
+    overflow: hidden;
+    ;
+}
+
+.card-btns {
+    transition: all .5s ease;
+    position: absolute;
+    bottom: 10px;
+    /* right: 15px; */
+    /* 未點到card-btns先不進場
+        CARD 包住 card-btns就可以用css */
+    right: -200px;
+}
+
+/* 卡片裡面的 card-btns階段選擇器 
+讓三個按鈕移到圖上片才進場*/
+.card:hover .card-btns {
+    right: 15px;
+}
+
+/* 階層選擇器 */
+.card-btns button {
+    /* font-awesome */
+    color: tomato;
+    font-size: 22px;
+    opacity: .7;
+    /* ease速度曲線:
+        ease-out結尾時速度會放慢
+        ease-ins結尾時速度會快一點
+     */
+    transition: all .5s cubic-bezier(.3, .48, .87, .51);
+    /* ransparent 透明色+去BORDER */
+    background-color: transparent;
+    border: none;
+    position: relative;
+    bottom: 0px;
+}
+
+.card-btns button:hover {
+    opacity: 1;
+    bottom: 4px;
+}
+
+.dropdown {
+    /* 要佔空間 */
+    position: relative;
+    /* div預設是區塊元素 */
+    /* inline-block可設定高度及寬度未設定會變整行 */
+    display: inline-block;
+    /* 左邊對外留白 */
+    margin-left: 5px;
+
+
+}
+
+.dropdown-btn {
+    background: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+
+.dropdown-btn:hover {}
+
+.dropdown-list {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 3px 4px #27252b65;
+    /* 不佔空間 */
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background: white;
+    display: none;
+}
+
+/* 用js點按鈕後顯示下拉選單 */
+.dropdown-list a {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-bottom: 1px solid #888;
+    background: #fff;
+
+
+}
+
+.dropdown-list a:hover {
+    background: #ccc;
+
+}
+
+/* 最後一個按鈕不要有線 */
+.dropdown-list a:last-child {
+    border-bottom: none;
+    /* 進階定義 */
+    /* :first-child
+    :last-child
+    :nth-child(2) */
+}
+
+.dropdown.show .dropdown-btn {
+    background: #111;
+    box-shadow: 0 0 0 5px #3636365d;
+}
+
+
+.dropdown.show .dropdown-list {
+    display: block;
+}

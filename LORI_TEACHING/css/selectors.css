@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  border: 4px solid #000;
+  background: #90ee90;
+  background: linear-gradient(135deg, #90ee90, #48b28b);
+}
+
+.container > div {
+  border: 4px solid #000;
+  background: #f0e68c;
+  background: linear-gradient(135deg, #f0e68c, #f2bc60);
+}
+
+.container .label {
+  background: #000;
+  color: white;
+  padding: 0 8px 5px 0;
+}
+
+a {
+  color: #198068;
+}
+
+/* 
+   CSS屬性衝突(優先性)規則
+   1. 選擇器層級一樣，屬性衝突「後者(寫在後面的)」生效
+   2. 選擇器層級不同，屬性衝突「層級高」生效-跟寫的順序無關
+      * < TAG < CLASS < ID(#title) < (不推)inline-style < (不推)!important
+
+       建議自己寫的時候最好都用class比較不會遇到上方的問題
+       inline-style →不能重覆使用，將css的屬性寫在html
+       !important→層級最高打破一切規則
+*/
+#title1 {
+  color: red !important;
+  /* !important只能用在真的來不及的時候，之後再改，暫時性 */
+}
+
+.title {
+  color: blue;
+}
+
+#title1 {
+  color: purple;
+}
+
+/* 
+   階層選擇器
+   .container>p 選.container裡「...」的p 限定第一層
+   .container p 選.container裡「...」的p
+*/
+/* .container>p {
+    background-color: rgb(30, 171, 210);
+} */
+/* 選.container 裡面全部的p，但排除分類是no-bg的p */
+.container p:not(.no-bg) {
+  background-color: chocolate;
+}
+
+/* 
+    階層選擇器練習，試著使用階層選擇器完成以下任務：
+    1. 將 .article 內的 h2 置中。
+    2. 設定 .article 內的 p 行高為1.5倍，並使用 18px 的字體大小。
+    3. 讓三份 .article 內的 h2 有著不一樣的顏色。
+    4. 設計 .article 內的 a 有著按鈕的樣式。
+    5. 讓三份 .article 內的 a 有著不一樣的背景顏色。
+    6. 讓三份 .article 內的 .line 有著不一樣的背景顏色。
+*/
+#article1 h2 {
+  color: rgb(179, 255, 0);
+}
+#article1 a,
+#article1 .line {
+  background-color: greenyellow;
+}
+
+.article h2 {
+  text-align: center;
+}
+.article p {
+  line-height: 1.5;
+  font-size: 18px;
+}
+.article a {
+  text-decoration: none;
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+.article a:hover {
+  opacity: 0.1;
+}
+
+.article-list {
+  padding: 0px 15px;
+}
+
+.article {
+  background: #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 700px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1411764706), 0px 1px 3px rgba(0, 0, 0, 0.1215686275);
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.article img {
+  width: 100%;
+  position: relative;
+  display: block;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.article:hover img {
+  transform: scale(1.1);
+}
+
+.article-body {
+  padding: 30px 20px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background: #000;
+  margin: 0 auto;
+}/*# sourceMappingURL=selectors.css.map */
